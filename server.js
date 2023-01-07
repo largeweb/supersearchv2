@@ -47,7 +47,7 @@ app.post('/ask', async(req, res) => {
         scmd = './scripts/openai-request ' + api_key + " 'you are fortune and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="green_guy") {
         scmd = './scripts/openai-request ' + api_key + " 'you are green guy and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="shadow_people") {
+    } else if(artist=="shadow") {
         scmd = './scripts/openai-request ' + api_key + " 'you are shadow people and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="mario") {
         scmd = './scripts/openai-request ' + api_key + " 'you are mario and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
