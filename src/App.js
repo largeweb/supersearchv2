@@ -37,6 +37,7 @@ function App() {
   const ask = async() => {
     setFireDisabled(true)
     setFireColor('red')
+    setResponse('Thinking...')
     console.log("ask pressed")
     console.log(search)
     let response = await fetch('http://170.187.159.180:5001/ask', {
