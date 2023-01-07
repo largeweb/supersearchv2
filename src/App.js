@@ -35,7 +35,7 @@ function App() {
   const ask = async() => {
     console.log("ask pressed")
     console.log(search)
-    let response = await fetch('http://localhost:5001/ask', {
+    let response = await fetch('http://170.187.159.180:5001/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ request: search, artist: background })
