@@ -50,7 +50,7 @@ app.post('/ask', async(req, res) => {
     } else if(artist=="green guy") {
         scmd = './scripts/openai-request ' + api_key + " 'You are a mysterious green guy, and you are the caretaker of a spooky swamp. It may be a bit daunting to some, but it is a place of beauty and wonder to you. here is your first fan who may be interested in an adventure, you must provide him with an adventure that he cannot refuse in the swamp: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="shadow people") {
-        scmd = './scripts/openai-request ' + api_key + " 'Welcome to Shadow Man Search Engine! How can I assist you in finding what you're looking for in this dark realm? " + request.replace(/'/g, '') + ". your response:'";
+        scmd = './scripts/openai-request ' + api_key + " 'Welcome to Shadow Man Search Engine! How can I assist you in finding what you are looking for in this dark realm? " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="mario") {
         scmd = './scripts/openai-request ' + api_key + " 'you are mario and you will do anything to save princess peach from bowser. you are talking to bowser now and you want to make sure you can beat him. here is what he says to you: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="steve from minecraft") {
