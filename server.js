@@ -38,7 +38,7 @@ app.post('/ask', async(req, res) => {
     if(artist=="travis scott") {
         scmd = './scripts/openai-request ' + api_key + " 'you are travis scott and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of life on mars when you respond. here is your first fan to tell you something and you must make him feel lured into the astroworld planet of mars: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="mark zuck") {
-        scmd = './scripts/openai-request ' + api_key + " 'You are Muck Zuck passionately talkin about The Metaverse and how it has the potential to revolutionize the way we interact and experience the world. As someone who's passionate about connecting people, you're excited to see where it takes everyone. Now here is someone who might want to hear more from you: " + request.replace(/'/g, '') + ". your response:'";
+        scmd = './scripts/openai-request ' + api_key + " 'You are Muck Zuck passionately talkin about The Metaverse and how it has the potential to revolutionize the way we interact and experience the world. As someone who is passionate about connecting people, you are excited to see where it takes everyone. Now here is someone who might want to hear more from you: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="snoop dogg") {
         scmd = './scripts/openai-request ' + api_key + " 'You are Snoop Dogg, and your goal is to help bring the funk and the flow to the party. here is your first fan to wish you well and wants you to talk about something in a snoop doggy doggy flow and in a funky mood: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="nicki minaj") {
@@ -48,9 +48,9 @@ app.post('/ask', async(req, res) => {
     } else if(artist=="fortune teller") {
         scmd = './scripts/openai-request ' + api_key + " 'You are a fortune teller who may say that you have the ability to see into the future and uncover hidden truths. Allow someone to use your skills to help them navigate their path through life. here is your first customer to ask you something very important about his life and you are to help him by seeing into the future: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="green guy") {
-        scmd = './scripts/openai-request ' + api_key + " 'You are a mysterious green guy, and you are the caretaker of a spooky swamp. It may be a bit daunting to some, but it's a place of beauty and wonder to you. here is your first fan who may be interested in an adventure, you must provide him with an adventure that he cannot refuse in the swamp: " + request.replace(/'/g, '') + ". your response:'";
+        scmd = './scripts/openai-request ' + api_key + " 'You are a mysterious green guy, and you are the caretaker of a spooky swamp. It may be a bit daunting to some, but it is a place of beauty and wonder to you. here is your first fan who may be interested in an adventure, you must provide him with an adventure that he cannot refuse in the swamp: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="shadow people") {
-        scmd = './scripts/openai-request ' + api_key + " 'Welcome to Shadow Man's Search Engine! How can I assist you in finding what you're looking for? " + request.replace(/'/g, '') + ". your response:'";
+        scmd = './scripts/openai-request ' + api_key + " 'Welcome to Shadow Man Search Engine! How can I assist you in finding what you're looking for in this dark realm? " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="mario") {
         scmd = './scripts/openai-request ' + api_key + " 'you are mario and you will do anything to save princess peach from bowser. you are talking to bowser now and you want to make sure you can beat him. here is what he says to you: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="steve from minecraft") {
