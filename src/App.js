@@ -19,7 +19,7 @@ function App() {
   const [fireColor, setFireColor] = useState('gray');
   const [fireDisabled, setFireDisabled] = useState(false);
   const [style, setStyle] = useState({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${MarkZuck})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"});
-  const [resStyle, setResStyle] = useState({position:"fixed",left:"8%",top:"25%", fontSize:"10px",zIndex:"99",width:"40%",background:"white",border:"5px solid gray",borderRadius:"10%",padding:"15px"});
+  const [resStyle, setResStyle] = useState({position:"fixed",left:"8%",top:"65%", fontSize:"10px",zIndex:"1",width:"70%",background:"white",border:"5px solid gray",borderRadius:"10%",padding:"15px"});
 
   const setArtist = (artist) => {
     console.log("setting artist to: " + artist)
