@@ -18,49 +18,57 @@ let summarizeEndPrompt = "? your response: "
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET');
+  res.header('Access-Control-Allow-Methods', 'POST');
   next();
 });
 
-app.post('/search', async(req, res) => {
-    console.log("search is: " + req.body.search);
-    let searchTerm = req.body.search;
-    const tokens = searchTerm.split(' ');
-    // Encode the tokens using the encodeURIComponent function
-    const encodedTokens = tokens.map(encodeURIComponent);
-    // Join the encoded tokens using the "+" symbol as a delimiter
-    const query = encodedTokens.join('+');
-    // Return the Google search URL with the query parameter
-    const search_for_links = `https://www.google.com/search?q=${query}`;
-    console.log("search_for_links is: " + search_for_links);
+app.post('/ask', async(req, res) => {
 
-    try {
-        const browser = await puppeteer.launch({ headless: true });
-        const page = await browser.newPage();
-        await page.goto(search_for_links, { waitUntil:
-            'networkidle2' });
-        const html = await page.content();
-        const $ = cheerio.load(html);
-        const links = $('a');
-        let urls = []
-        $(links).each(function(i, link){
-            urls[i] = $(link).attr('href');
-        }
-        );
-        browser.close();
-        console.log(urls);
-        // get the urls from the array that start with https
-        let url_only_https = []
-        for(let i = 0; i < urls.length; i++) if(urls[i] == null) continue; else if(urls[i].startsWith("https")  && !urls[i].includes("google")) url_only_https.push(urls[i]);
-        console.log(url_only_https);
-        res.send(url_only_https);
-    } catch (error) {
-        console.error(error);
-        res.send("server search error")
+    let api_key = process.env.API_KEY;
+    let request = req.body.request;
+    let artist = req.body.artist;
+    let outputjsonstring = "";
+
+    let scmd = '';
+
+    if(artist=="travis_scott") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are travis scott and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="kanye_west") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are kanye west and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="snoop_dogg") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are snoop dogg and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="nicki_minaj") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are nicki minaj and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="god") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are god and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="fortune_teller") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are fortune and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="green_guy") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are green guy and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="shadow_people") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are shadow people and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="mario") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are mario and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+    } else if(artist=="steve_from_minecraft") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are steve from minecraft and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
     }
+
+    console.log("user hit endpoint");
+    console.log(request);
+    console.log(scmd);
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+
 });
 
 app.post('/scrape', async(req, res) => {
-    console.log("scrape endpoint hit");
+    console.log("user hit scrape endpoint");
 
     let link = req.body.link;
     let paragraphs1 = [];
@@ -68,8 +76,8 @@ app.post('/scrape', async(req, res) => {
     async function scrapeParagraphs(url) {
 
     // launch a new browser instance
-    const browser = await puppeteer.launch();
-    // create a new page
+    console.log("launching puppeteer browser")
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'],          ignoreHTTPSErrors: true, dumpio: false}); // create a new page
     const page = await browser.newPage();
     // navigate to the given URL
     await page.goto(url, { waitUntil: 'networkidle2' });
