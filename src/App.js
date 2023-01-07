@@ -16,6 +16,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [response, setResponse] = useState('Hello, I am Kanye West. Ask me a question.');
   const [background, setBackground] = useState('kanye_west');
+  const [fireColor, setFireColor] = useState('gray');
   const [style, setStyle] = useState({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${KanyeWest})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"});
 
   const setArtist = (artist) => {
@@ -33,6 +34,7 @@ function App() {
   }
 
   const ask = async() => {
+    setFireColor('red')
     console.log("ask pressed")
     console.log(search)
     let response = await fetch('http://170.187.159.180:5001/ask', {
@@ -43,6 +45,7 @@ function App() {
     let data = await response.json();
     console.log(data.choices[0].text)
     setResponse(data.choices[0].text)
+    setFireColor('gray')
   }
 
   return (
