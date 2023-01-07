@@ -22,8 +22,8 @@ function App() {
 
   const setArtist = (artist) => {
     console.log("setting artist to: " + artist)
-    if(artist === 'Kanye') { setBackground('kanye_west');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${KanyeWest})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Kanye West. Ask me a question.')}
-    else if(artist === 'Snoop') { setBackground('snoop_dogg');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${SnoopDogg})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Snoop Doggy Dogg, wuz poppin cuz') }
+    if(artist === 'Kanye') { setBackground('kanye_west');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${KanyeWest})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Kanye West. Ask me a question.') }
+    else if(artist === 'Snoop') { setBackground('snoop_dogg');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${SnoopDogg})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Snoop Doggy Dogg, wuz poppin cuz                                                                                                                                                                                                                                                                                   ') }
     else if(artist === 'Travis') { setBackground('travis_scott');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${TravBubble})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Travis Scott. Ask me a question.') }
     else if(artist === 'Nicki') { setBackground('nicki_minaj');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${NickiMinaj})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Nicki Minaj. Ask me a question.') }
     else if(artist === 'Steve') { setBackground('steve_from_minecraft');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${Steve})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Steve from Minecraft. Ask me a question.') }
@@ -37,7 +37,7 @@ function App() {
   const ask = async() => {
     setFireDisabled(true)
     setFireColor('red')
-    setResponse('Thinking...\n...\n...\n...\n...\n...\n...\n...')
+    setResponse('Thinking...')
     console.log("ask pressed")
     console.log(search)
     let response = await fetch('http://170.187.159.180:5001/ask', {
