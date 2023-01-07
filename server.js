@@ -37,25 +37,6 @@ app.post('/ask', async(req, res) => {
 
     if(artist=="travis_scott") {
         scmd = './scripts/openai-request ' + api_key + " 'you are travis scott and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="kanye_west") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are kanye west and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="snoop_dogg") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are snoop dogg and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="nicki_minaj") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are nicki minaj and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="god") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are god and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="fortune_teller") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are fortune and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="green_guy") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are green guy and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="shadow") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are shadow people and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="mario") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are mario and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="steve_from_minecraft") {
-        scmd = './scripts/openai-request ' + api_key + " 'you are steve from minecraft and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    }
 
     console.log("user hit endpoint");
     let output = "";
@@ -66,6 +47,115 @@ app.post('/ask', async(req, res) => {
         outputjsonstring = stdout;
         res.json(JSON.parse(outputjsonstring));
     });
+    } else if(artist=="kanye_west") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are kanye west and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="snoop_dogg") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are snoop dogg and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="nicki_minaj") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are nicki minaj and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="god") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are god and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="fortune_teller") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are fortune and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="green_guy") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are green guy and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="shadow") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are shadow people and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="mario") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are mario and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    } else if(artist=="steve_from_minecraft") {
+        scmd = './scripts/openai-request ' + api_key + " 'you are steve from minecraft and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
+
+    console.log("user hit endpoint");
+    let output = "";
+    exec(scmd, (err, stdout, stderr) => {
+        if (err !== null) console.log('exec error: ' + err);
+        console.log("FINISHED:")
+        console.log(stdout)
+        outputjsonstring = stdout;
+        res.json(JSON.parse(outputjsonstring));
+    });
+    }
 
 });
 
