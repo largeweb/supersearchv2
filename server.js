@@ -35,25 +35,25 @@ app.post('/ask', async(req, res) => {
 
     let scmd = '';
 
-    if(artist=="travis_scott") {
+    if(artist=="travis scott") {
         scmd = './scripts/openai-request ' + api_key + " 'you are travis scott and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="kanye_west") {
+    } else if(artist=="kanye west") {
         scmd = './scripts/openai-request ' + api_key + " 'you are kanye west and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="snoop_dogg") {
+    } else if(artist=="snoop dogg") {
         scmd = './scripts/openai-request ' + api_key + " 'you are snoop dogg and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="nicki_minaj") {
+    } else if(artist=="nicki minaj") {
         scmd = './scripts/openai-request ' + api_key + " 'you are nicki minaj and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="god") {
         scmd = './scripts/openai-request ' + api_key + " 'you are god and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="fortune_teller") {
+    } else if(artist=="fortune teller") {
         scmd = './scripts/openai-request ' + api_key + " 'you are fortune and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="green_guy") {
+    } else if(artist=="green guy") {
         scmd = './scripts/openai-request ' + api_key + " 'you are green guy and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="shadow") {
+    } else if(artist=="shadow people") {
         scmd = './scripts/openai-request ' + api_key + " 'you are shadow people and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
     } else if(artist=="mario") {
         scmd = './scripts/openai-request ' + api_key + " 'you are mario and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
-    } else if(artist=="steve_from_minecraft") {
+    } else if(artist=="steve from minecraft") {
         scmd = './scripts/openai-request ' + api_key + " 'you are steve from minecraft and you are trying to be an amazing friend to one of you concert fans. you are going to response in a very genuine rapper style and always talk about the future of technology when you respond. here is your first fan to tell you something: " + request.replace(/'/g, '') + ". your response:'";
     }
 
