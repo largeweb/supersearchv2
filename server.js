@@ -1,5 +1,4 @@
 // simple express server running on port 3000
-const port = process.env.PORT;
 const app = require('express')();
 const puppeteer = require('puppeteer');
 app.use(require('body-parser').json());
@@ -7,6 +6,7 @@ const cheerio = require('cheerio');
 const request = require('request');
 const cors = require('cors');
 require('dotenv').config();
+const port = process.env.PORT;
 const exec = require('child_process').exec;
 
 // let links = 0;
