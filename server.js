@@ -60,13 +60,17 @@ app.post('/ask', async(req, res) => {
     console.log("user hit endpoint");
     console.log(scmd);
     let output = "";
-    exec(scmd, (err, stdout, stderr) => {
-        if (err !== null) console.log('exec error: ' + err);
-        console.log("FINISHED:")
-        console.log(stdout)
-        outputjsonstring = stdout;
-        res.json(JSON.parse(outputjsonstring));
-    });
+    try {
+        exec(scmd, (err, stdout, stderr) => {
+            if (err !== null) console.log('exec error: ' + err);
+            console.log("FINISHED:")
+            console.log(stdout)
+            outputjsonstring = stdout;
+            res.json(JSON.parse(outputjsonstring));
+        });
+    } catch (error) {
+        console.log(error);
+    }
 
 });
 
