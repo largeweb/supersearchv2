@@ -30,6 +30,8 @@ app.post('/ask', async(req, res) => {
     let request = req.body.request;
     let artist = req.body.artist;
     let outputjsonstring = "";
+    console.log(request);
+    console.log(scmd);
 
     let scmd = '';
 
@@ -56,8 +58,6 @@ app.post('/ask', async(req, res) => {
     }
 
     console.log("user hit endpoint");
-    console.log(request);
-    console.log(scmd);
     let output = "";
     exec(scmd, (err, stdout, stderr) => {
         if (err !== null) console.log('exec error: ' + err);
