@@ -1,5 +1,5 @@
 // simple express server running on port 3000
-const port = 5000;
+const port = process.env.PORT;
 const app = require('express')();
 const puppeteer = require('puppeteer');
 app.use(require('body-parser').json());
