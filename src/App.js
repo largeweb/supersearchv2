@@ -46,22 +46,55 @@ function App() {
   }
 
   const ask = async() => {
-    setFireDisabled(true)
-    setFireColor('red')
-    setResponse('Thinking...')
-    console.log("ask pressed")
-    console.log(search)
-    let response = await fetch('http://170.187.159.180:5001/ask', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ request: search, artist: background })
-    })
-    let data = await response.json();
-    console.log(data.choices[0].text)
-    setResponse(data.choices[0].text)
+  setFireDisabled(true)
+  setFireColor('red')
+  setResponse('Thinking...')
+  console.log("ask pressed")
+  console.log(search)
+  let response;
+  try {
+    response = await Promise.race([
+      fetch('http://170.187.159.180:5001/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ request: search, artist: background })
+      }),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('request timeout')), 5000)
+      )
+    ]);
+  } catch (error) {
+    console.error(error);
+    setResponse('error, please try again');
     setFireColor('gray')
     setFireDisabled(false)
+    return;
   }
+  let data = await response.json();
+  console.log(data.choices[0].text)
+  setResponse(data.choices[0].text)
+  setFireColor('gray')
+  setFireDisabled(false)
+}
+
+
+  // const ask = async() => {
+  //   setFireDisabled(true)
+  //   setFireColor('red')
+  //   setResponse('Thinking...')
+  //   console.log("ask pressed")
+  //   console.log(search)
+  //   let response = await fetch('http://170.187.159.180:5001/ask', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify({ request: search, artist: background })
+  //   })
+  //   let data = await response.json();
+  //   console.log(data.choices[0].text)
+  //   setResponse(data.choices[0].text)
+  //   setFireColor('gray')
+  //   setFireDisabled(false)
+  // }
 
   return (
     <div className="App">
