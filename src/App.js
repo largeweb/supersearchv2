@@ -23,8 +23,8 @@ function App() {
 
   const setArtist = (artist) => {
     console.log("setting artist to: " + artist)
-    // KANYE WEST
-    if(artist === 'Mark Zuck') { setBackground('mark zuck');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${MarkZuck})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse("The metaverse has the potential to revolutionize the way we interact and experience the world. As someone who's passionate about connecting people, I am excited to see where it takes us."); setResStyle({position:"fixed",left:"8%",top:"65%", fontSize:"10px",zIndex:"1",width:"70%",background:"white",border:"5px solid gray",borderRadius:"10%",padding:"15px"}) }
+    // MARK ZUCK
+    if(artist === 'Mark Zuck') { setBackground('mark zuck');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${MarkZuck})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse("The metaverse has the potential to revolutionize the way we interact and experience the world. As someone who is passionate about connecting people, I am excited to see where it takes us."); setResStyle({position:"fixed",left:"8%",top:"65%", fontSize:"10px",zIndex:"1",width:"70%",background:"white",border:"5px solid gray",borderRadius:"10%",padding:"15px"}) }
     // SNOOP DOGG
     else if(artist === 'Snoop') { setBackground('snoop dogg');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${SnoopDogg})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse("Hey there, what's good? It's Snoop Dogg, and I'm here to bring the funk and the flow."); setResStyle({position:"fixed",left:"25%",top:"40%", fontSize:"10px",zIndex:"1",width:"40%",background:"white",border:"5px solid gray",borderRadius:"10%",padding:"15px"}) }
     // TRAVIS SCOTT
