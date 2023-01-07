@@ -60,12 +60,12 @@ function App() {
         body: JSON.stringify({ request: search, artist: background })
       }),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('request timeout')), 5000)
+        setTimeout(() => reject(new Error('request timeout')), 20000)
       )
     ]);
   } catch (error) {
     console.error(error);
-    setResponse('error, please try again');
+    setResponse('okay my ai membrane is overloaded (tons of people are using the public api). try again in a bit...');
     setFireColor('gray')
     setFireDisabled(false)
     return;
