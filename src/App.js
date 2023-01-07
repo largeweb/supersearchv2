@@ -23,7 +23,7 @@ function App() {
   const setArtist = (artist) => {
     console.log("setting artist to: " + artist)
     if(artist === 'Kanye') { setBackground('kanye_west');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${KanyeWest})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Kanye West. Ask me a question.') }
-    else if(artist === 'Snoop') { setBackground('snoop_dogg');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${SnoopDogg})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"2"}); setResponse('Hello, I am Snoop Doggy Dogg, wuz poppin cuz?') }
+    else if(artist === 'Snoop') { setBackground('snoop_dogg');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${SnoopDogg})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Snoop Doggy Dogg, wuz poppin cuz?') }
     else if(artist === 'Travis') { setBackground('travis_scott');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${TravBubble})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Travis Scott. Ask me a question.') }
     else if(artist === 'Nicki') { setBackground('nicki_minaj');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${NickiMinaj})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Nicki Minaj. Ask me a question.') }
     else if(artist === 'Steve') { setBackground('steve_from_minecraft');setStyle({left:"0",right:"0",top:"0",bottom:"0",position:"fixed",backgroundSize:"cover",backgroundImage:`url(${Steve})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",zIndex:"-1"}); setResponse('Hello, I am Steve from Minecraft. Ask me a question.') }
@@ -67,7 +67,7 @@ function App() {
       <div style={style}></div>
       <input style={{opacity:"0.7",position:"fixed",top:"80%",width:"60%",left:"5%",height:"10%",fontSize:"10px",borderRadius:"2%",border:"10px solid lightgray",backgroundColor:"lightblue"}} type="text" value={search} placeholder={`Ask ${background} Anything...`} onChange={(e) => setSearch(e.target.value)} />
       <button onClick={ask} style={{position:"fixed",top:"81%",width:"24%",left:"72%",fontSize:"40px",height:"10%",border:"10px solid lightgray",backgroundColor:`${fireColor}`}}>🔥</button>
-      <div style={{position:"fixed",left:"5%",top:"25%",height:"50%", fontSize:"15px",zIndex:"99",width:"70%"}}>{response}</div>
+      <div style={{position:"fixed",left:"5%",top:"25%",height:"50%", fontSize:"15px",width:"70%"}}>{response}</div>
     </div>
   );
 }
